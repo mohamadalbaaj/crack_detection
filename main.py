@@ -44,6 +44,8 @@ for file in image_files:
     median = np.median(blurred_image)
     lower = int(max(0, ((1.0 - sigma) * median)))
     upper = int(min(255, ((1.0 + sigma) * median)) - 175)
+    print("lower is ", lower)
+    print("upper is ", upper)
 
     # Apply Canny edge detection
     canny_image = cv2.Canny(blurred_image, lower, upper)
